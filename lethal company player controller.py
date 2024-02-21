@@ -24,7 +24,6 @@ except pymem.exception.ProcessNotFound:
 
 def ptr2Addr(base,offsets):
 	address = pm.read_longlong(base)
-	# ~ print(address)
 	for i in offsets:
 		if i != offsets[-1]:
 				address = pm.read_longlong(address + i)
@@ -40,9 +39,6 @@ def main():
 		sys.exit()
 		
 	print("[\033[1;32m+\033[0;0m] successfully found the player")
-    # ~ print(pm.read_float(player + SPEED_OFFSET))
-    # ~ print(pm.read_float(player + JUMP_OFFSET))
-    # ~ print(pm.read_int(player + HEALTH_OFFSET))
     
 	godmode = 0
 	speed = 0
